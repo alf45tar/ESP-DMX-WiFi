@@ -2,8 +2,6 @@
 
 Art-Net to DMX gateway. It supports RDM and sACN (E1.31) too.
 
-![](images/Assembled.png)
-
 Strongly based on amazing [LXDMXWiFi_Library](https://github.com/claudeheintz/LXDMXWiFi_Library) example [ESP-DMX](https://github.com/claudeheintz/LXDMXWiFi_Library/tree/master/examples/ESP-DMX)).
 
 Configuration utility for macOS and Windows is [here](https://github.com/claudeheintz/LXDMXWiFi_Library/tree/master/examples/configuration%20utility)
@@ -101,10 +99,5 @@ GPIO2 --------| D         GND |---+------ Ground (XLR pin 1)
                                   |
                                  GND
 ```
-
-## Images
-
-![](images/Open%20from%20USB%20side.png)
-![](images/Open%20from%20DMX%20side.png)
 
 
