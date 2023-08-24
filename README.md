@@ -8,10 +8,7 @@ Strongly based on amazing [LXDMXWiFi_Library](https://github.com/claudeheintz/LX
 
 Configuration utility for macOS and Windows is [here](https://github.com/claudeheintz/LXDMXWiFi_Library/tree/master/examples/configuration%20utility)
 
-
-## Changes
-
-If connection to Station fails, start with default configuration (AP mode)
+The biggest change from source project is when connection to Station fail it starts with default configuration (AP mode). There is no need to have a startuu button.
 
 ```
 uint8_t DMXwifiConfig::setupWiFi(IndicateActivityCallback indicateConnecting) {
