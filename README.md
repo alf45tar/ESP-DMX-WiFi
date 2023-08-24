@@ -9,6 +9,32 @@ Strongly based on amazing [LXDMXWiFi_Library](https://github.com/claudeheintz/LX
 Configuration utility for macOS and Windows is [here](https://github.com/claudeheintz/LXDMXWiFi_Library/tree/master/examples/configuration%20utility)
 
 
+## Changes
+
+If connection to Station fails, start with default configuration (AP mode)
+
+```
+uint8_t DMXwifiConfig::setupWiFi(IndicateActivityCallback indicateConnecting) {
+
+ ... omissis ...
+
+    unsigned long start = millis();
+    while ((WiFi.status() != WL_CONNECTED) && ((millis() - start) < 15000)) {
+      delay(100);
+      indicateConnecting();
+    }
+    if (WiFi.status() != WL_CONNECTED) {    // Connection to Station failed, start with default configuration (AP mode)
+      initConfig();                         // initialize but do not store in EEPROM
+      rv = LX_AP_MODE;
+      WiFi.mode(WIFI_AP);
+      WiFi.softAP(SSID());
+      WiFi.softAPConfig(apIPAddress(), apGateway(), apSubnet());
+    }
+
+  ... omissis ...
+}
+```
+
 ## Bill of materials
 
 - ESP01S board
